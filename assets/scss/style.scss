@@ -1,0 +1,39 @@
+@mixin ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+@mixin anime($speed) {
+    animation-name: myanime;
+    animation-duration: $speed;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@mixin bg-color($bgcolor) {
+    background: $bgcolor;
+}
+
+@keyframes myanime {
+    0%,100%{transform: translateX(0);}
+    50%{transform: translateX( calc(100vw - 100px));}
+}
+
+.ball1{
+    @include ball ;
+    @include anime(3s) ;
+    @include bg-color(red) ;
+}
+
+.ball2{
+    @include ball ;
+    @include anime(4s) ;
+    @include bg-color(blue) ;
+}
+
+.ball3{
+    @include ball ;
+    @include anime(6s) ;
+    @include bg-color(yellow) ;
+}
